@@ -1,0 +1,130 @@
+:root {
+    --main-color: rgb(255, 222, 227);
+    --sub-color: rgb(222, 250, 255);
+    --tertiary-color: rgb(128, 117, 115);
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+    color: var(--tertiary-color);
+    background: var(--main-color);
+    background: linear-gradient(
+        360deg,
+        var(--main-color) 60%,
+        var(--sub-color) 100%
+    );
+    background-repeat: no-repeat;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 1.5rem;
+    margin: 1rem;
+}
+
+a {
+    color: var(--tertiary-color);
+    transition: opacity 0.5s;
+
+    &:hover {
+        opacity: 0.6;
+    }
+}
+
+.screen-reader-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.button-toggle {
+    cursor: pointer;
+    background-color: rgb(255, 125, 125);
+    border: 2px solid rgb(90, 0, 0);
+    border-radius: 15px;
+    opacity: 0.5;
+    transition: opacity 0.5s;
+
+    &:hover {
+        opacity: 0.8;
+    }
+
+    &:active {
+        opacity: 1;
+    }
+
+    &.toggled {
+        opacity: 1;
+    }
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin: 0 1.5rem;
+}
+
+.scores {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.game-board {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.card {
+    cursor: pointer;
+    position: relative;
+    width: 17rem;
+    height: 25rem;
+    overflow: hidden;
+    border: 4px solid var(--tertiary-color);
+    border-radius: 10px;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    transition: background-color 1s;
+
+    img {
+        pointer-events: none;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top;
+    }
+
+    &.wrong {
+        &::before {
+            content: '';
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            font-size: 2rem;
+            background-color: rgba(255, 30, 30, 0.3);
+        }
+    }
+}
