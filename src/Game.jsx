@@ -117,7 +117,7 @@ const Game = () => {
     return (
         <div>
             <section className='header'>
-                <h1>Anime Memory Card Game</h1>
+                <h1>Moe Memory</h1>
                 <div className='scores'>
                     <button className='button-toggle'
                         onClick={(event) => handleToggleButton(event)}>NSFW</button>
